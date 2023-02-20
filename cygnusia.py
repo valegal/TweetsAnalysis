@@ -34,14 +34,14 @@ import matplotlib.pyplot as plt
 plt.style.use('fivethirtyeight')
 
 #@title **Autenticación API v2 Twitter**
-API_KEY = "dP19l2XKHIyhVtvJPAeHXY7QR"
-API_SECRET = "QQKfiLo0aTiDEaU9pmWhlTVpje0n3oN04hvVKsAGtrzObkdz7j"
-BEARER_TOKEN = "AAAAAAAAAAAAAAAAAAAAAGn5kQEAAAAAA5SFmuusVBUdHv%2BpyIJqeLFqLK0%3DqWcDaFACSizmYcM75INE68xl9bSwSDezEkzM1JQNH9yJuZrf7H"
-ACCESS_TOKEN = "847523016498167808-PYjDpJIzvTO8AIBiPTbrOKAaxJS68Al"
-ACCESS_TOKEN_SECRET = "DBdGoLkAJGDSEdkIMJKdHUpwuEzJ4pHdOdVhnbN9OUGPq"
+API_KEY = ""
+API_SECRET = ""
+BEARER_TOKEN = ""
+ACCESS_TOKEN = ""
+ACCESS_TOKEN_SECRET = ""
 
 #@title **Tweets**
-query = "(from:POTUS OR from:elonmusk) min_faves:50 until:2023-02-10 since:2018-01-01 -filter:links"
+query = "(from:POTUS OR from:elonmusk) until:2023-02-14 since:2020-01-01 -filter:links"
 tweets = []
 limit = 500
 
@@ -128,9 +128,9 @@ plt.figure(figsize=(8,6))
 for i in range(0, df.shape[0]):
   plt.scatter(df['Polarity'][i], df['Subjectivity'][i], color='blue')
 
-plt.title('Analisis de sentimientos')
-plt.xlabel('polarity')
-plt.ylabel('subjectivity')
+plt.title('Analisis de sentimientos', color='black')
+plt.xlabel('polarity', color='black')
+plt.ylabel('subjectivity', color='black')
 plt.show()
 
 ptweet = df[df.Analysis == 'Positive']
